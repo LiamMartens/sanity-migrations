@@ -1,6 +1,6 @@
 {
   "name": "sanity-migrations",
-  "version": "0.0.1-beta.0",
+  "version": "0.0.1-beta.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
@@ -10,8 +10,8 @@
   "homepage": "https://github.com/LiamMartens/sanity-migrations",
   "repository": "LiamMartens/sanity-migrations",
   "files": [
-    "./bin",
-    "./dist"
+    "bin",
+    "dist"
   ],
   "scripts": {
     "build": "tsup"
@@ -20,7 +20,10 @@
     "node": ">=14.0.0"
   },
   "bugs": "https://github.com/LiamMartens/sanity-migrations/issues",
-  "keywords": ["sanity", "migrations"],
+  "keywords": [
+    "sanity",
+    "migrations"
+  ],
   "dependencies": {
     "@sanity/client": "^3.0.6",
     "case": "^1.6.3",
@@ -28,11 +31,14 @@
     "configstore": "^6.0.0",
     "find-up": "^6.3.0",
     "fs-extra": "^10.0.0",
-    "lodash.merge": "^4.6.2"
+    "inquirer": "^8.2.0",
+    "lodash.merge": "^4.6.2",
+    "ora": "^6.0.1"
   },
   "devDependencies": {
     "@types/configstore": "^5.0.1",
     "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^8.2.0",
     "@types/lodash.merge": "^4.6.6",
     "@types/node": "^17.0.17",
     "tsup": "^5.11.13",

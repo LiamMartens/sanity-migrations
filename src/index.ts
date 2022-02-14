@@ -4,6 +4,8 @@ import merge from 'lodash.merge'
 import Configstore from 'configstore'
 import SanityClient from '@sanity/client'
 import Case from 'case'
+import ora from 'ora'
+import inquirer from 'inquirer'
 import { program } from 'commander'
 import { findUp } from 'find-up'
 import { TMigrateOpts, TSanityJson, TSanityMigrationLog, TMigrationModule, TNewOpts } from './types'
@@ -120,7 +122,29 @@ program.command('migrate')
       token: sanityToken,
     })
 
+    const { confirm } = await inquirer.prompt<{ confirm: boolean }>([
+      {
+        type: 'confirm',
+        name: 'confirm',
+        message: [
+          `\nProject: ${sanityJson.api.projectId}`,
+          `Dataset: ${sanityJson.api.dataset}`,
+          `Migrations:\n${[
+            migrationsToRun.map(v => `  ${v}`),
+          ].join('\n')}\n`
+        ].join('\n')
+      }
+    ])
+
+    if (!confirm) {
+      return
+    }
+
     for (const migration of migrationsToRun) {
+      const spinner = ora({
+        text: `Running migration [${migration}]`,
+        color: 'red',
+      }).start()
       const mod: TMigrationModule = await import(path.join(sanityProjectDir, 'migrations', migration))
       await mod.default(client, {
         lastMigrationTs,
@@ -129,6 +153,7 @@ program.command('migrate')
       await fs.writeJSON(path.join(sanityProjectDir, 'migration-log.json'), migrationLog, {
         spaces: 2,
       })
+      spinner.stop()
     }
   })
 program.parse();

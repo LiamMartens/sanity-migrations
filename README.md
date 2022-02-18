@@ -1,5 +1,5 @@
 # Sanity Migrations
-[![NPM](https://badge.fury.io/npm/sanity-migrations-tool.svg)](npmjs.com/package/sanity-migrations-tool)
+[![npm version](https://badge.fury.io/js/sanity-migrations-tool.svg)](https://badge.fury.io/js/sanity-migrations-tool)
 
 This is a simple migrations tool for Sanity
 

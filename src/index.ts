@@ -46,7 +46,7 @@ program.command('new')
     await fs.writeFile(
       path.join(migrationsDir, filename),
 `/**
-* @type {import('sanity-migrations-tool').TMigrationModule}
+* @type {import('sanity-migrations-tool').TMigrationModule['default']}
 */
 module.exports = function migrate(sanityClient, opts) {
 }`

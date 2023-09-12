@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import merge from 'lodash.merge'
 import Configstore from 'configstore'
-import SanityClient from '@sanity/client'
+import { createClient } from '@sanity/client'
 import Case from 'case'
 import ora from 'ora'
 import inquirer from 'inquirer'
@@ -114,9 +114,9 @@ program.command('migrate')
       !migrationLog?.[dataset]?.[path.basename(migration, '.js')]
     ))
 
-    const client = new SanityClient({
+    const client = createClient({
       useCdn: false,
-      apiVersion: '2022-02-11',
+      apiVersion: '2023-09-12',
       projectId: sanityJson.api.projectId,
       dataset: sanityJson.api.dataset,
       token: sanityToken,

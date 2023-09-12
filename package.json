@@ -1,6 +1,6 @@
 {
   "name": "sanity-migrations-tool",
-  "version": "0.0.1-beta.2",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
@@ -17,31 +17,34 @@
     "build": "tsup"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "bugs": "https://github.com/LiamMartens/sanity-migrations/issues",
   "keywords": [
     "sanity",
     "migrations"
   ],
+  "peerDependencies": {
+    "@sanity/client": "^6.0.0"
+  },
   "dependencies": {
-    "@sanity/client": "^3.0.6",
     "case": "^1.6.3",
-    "commander": "^9.0.0",
+    "commander": "^11.0.0",
     "configstore": "^6.0.0",
     "find-up": "^6.3.0",
-    "fs-extra": "^10.0.0",
-    "inquirer": "^8.2.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.11",
     "lodash.merge": "^4.6.2",
-    "ora": "^6.0.1"
+    "ora": "^7.0.1"
   },
   "devDependencies": {
-    "@types/configstore": "^5.0.1",
-    "@types/fs-extra": "^9.0.13",
-    "@types/inquirer": "^8.2.0",
-    "@types/lodash.merge": "^4.6.6",
-    "@types/node": "^17.0.17",
-    "tsup": "^5.11.13",
-    "typescript": "^4.5.5"
+    "@types/configstore": "^6.0.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/node": "^20.6.0",
+    "@sanity/client": "^6.4.11",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
   }
 }

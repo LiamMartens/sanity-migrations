@@ -8,7 +8,7 @@ import ora from 'ora'
 import inquirer from 'inquirer'
 import { program } from 'commander'
 import { findUp } from 'find-up'
-import { TMigrateOpts, TSanityJson, TSanityMigrationLog, TMigrationModule, TNewOpts } from './types'
+import { TMigrateOpts, TSanityJson, TSanityMigrationLog, TMigrationModule, TNewOpts } from './types/index.js'
 
 program
   .name('Sanity Migration tool')

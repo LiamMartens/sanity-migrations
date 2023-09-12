@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true,
+    "sourceMap": true,
     "strictNullChecks": true,
-    "outDir": "./dist"
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "lib": ["ES2020"]
   },
   "include": [
     "**/*.ts"
